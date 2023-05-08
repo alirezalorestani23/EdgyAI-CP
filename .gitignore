@@ -221,3 +221,5 @@ cython_debug/
 
 !/data.db
 /data.db
+/.DS_Store
+/__pycache__
