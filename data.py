@@ -12,8 +12,8 @@ CREATE TABLE IF NOT EXISTS analysis_output (
   thread_intent TEXT,
   politeness INTEGER,
   acceptance INTEGER,
-  explicit_words TEXT,
-  highlight_words TEXT,
+  explicit_words INTEGER,
+  highlight_words INTEGER,
   engagement INTEGER,
   emotion INTEGER,
   trust INTEGER
@@ -63,13 +63,13 @@ def get_all_users(connection):
 
 
 def add_thread(connection, thread_parameters: threadParam.ThreadParam):
-  with connection:
-    connection.execute(ADD_THREAD, (thread_parameters.thread, thread_parameters.thread_id, thread_parameters.user_id,
-                                    thread_parameters.intent, thread_parameters.politeness,
-                                    thread_parameters.acceptance,
-                                    thread_parameters.explicit_words, thread_parameters.highlight_words,
-                                    thread_parameters.engagement,
-                                    thread_parameters.emotion, thread_parameters.trust))
+    with connection:
+        connection.execute(ADD_THREAD, (thread_parameters.thread, thread_parameters.thread_id, thread_parameters.user_id,
+                                        thread_parameters.thread_intent, thread_parameters.politeness,
+                                        thread_parameters.acceptance,
+                                        thread_parameters.explicit_words, thread_parameters.highlight_words,
+                                        thread_parameters.engagement,
+                                        thread_parameters.emotion, thread_parameters.trust))
 
 
 def get_all_threads(connection):
