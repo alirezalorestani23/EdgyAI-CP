@@ -3,7 +3,7 @@ import data
 from models.threadParam import ThreadParam
 
 # # Replace YOUR_API_KEY with your OpenAI API key
-# openai.api_key = "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"
+# openai.api_key = "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"
 #
 #
 # sys_msg = "Your name is City Player Assistant. " \
