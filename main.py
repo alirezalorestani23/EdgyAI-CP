@@ -36,9 +36,3 @@ from models.threadParam import ThreadParam
 #   usr_msg = input()
 #   msg_hist.append({"role": "user", "content": str(usr_msg)})
 #   print(ask_gpt(msg_hist))
-
-
-db_connection = data.connect()
-data.create_tables(db_connection)
-data.add_thread(db_connection, ThreadParam("thread", 1, 1, "1", 1, 1, "1", "1", 1, 1, 1))
-print(data.get_all_threads(db_connection))
